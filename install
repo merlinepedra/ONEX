@@ -1,5 +1,7 @@
 #!/bin/sh
-# onex v0.1
+# Name : Onex
+# Date : 24 November 2019
+# Description : onex is a hacking tools installer and package manager for hacker's.
 
 logo="\033[01;33m
   ___  _ __   ___\033[01;31m__  __
