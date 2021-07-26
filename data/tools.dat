@@ -368,3 +368,7 @@ zaproxy|zaproxy|web_hacking|https://github.com/zaproxy/zaproxy.git|git|python,ph
 zarp|zarp|null|https://github.com/hatRiot/zarp.git|git|python,git
 zip|zip|package|null|package_manager|null
 zirikatu|zirikatu|null|https://github.com/pasahitz/zirikatu.git|git|git
+crunch|crunch|password_attack|null|package_manager|null
+lua|lua|programming_language|null|package_manager|null
+edb-debugger|edb-debugger|forensics_tools|null|package_manager|null
+zVirus-Gen|zVirus-Gen|null|https://github.com/ZechBron/zVirus-Gen.git|git|git
