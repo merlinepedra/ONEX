@@ -836,8 +836,11 @@ about() {
   echo "$logo"
   echo " \033[01;33mOnex \033[01;31mv0.1\033[00m"
   echo " Onex is a library of all"
-  echo " hakcing tools for termux"
+  echo " hacking tools for termux"
   echo " and other linux distribution."
+  echo " \033[01;31mWarning\033[00m"
+  echo " We are not responsible for any misuse or damage caused by this program."
+  echo " Use this tool at your own risk!"
   echo -n "$prompt "
   read tmp
 }
