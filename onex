@@ -892,7 +892,6 @@ cli_list_all() {
   echo "\033[01;32m$tool\033[00m"
 }
 
-# comming soon
 # category function
 cli_category() {
   # get all category data
