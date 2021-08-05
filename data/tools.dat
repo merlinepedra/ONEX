@@ -378,3 +378,6 @@ b0mb3r|b0mb3r|null|https://github.com/Denishnc/b0mb3r.git|git|python,git
 Tbomb|Tbomb|null|https://github.com/TheSpeedX/TBomb.git|git|python,git
 flashsploit|flashsploit|exploitation_tools|https://github.com/thewhiteh4t/flashsploit.git|git|python,git
 killcast|killcast|null|https://github.com/thewhiteh4t/killcast.git|git|python,git
+MITMf|MITMf|sniffing_spoofing|https://github.com/byt3bl33d3r/MITMf.git|git|python2,git
+sherlock|sherlock|information_gathering|https://github.com/sherlock-project/sherlock.git|git|python,git
+ettercap|ettercap|sniffing_spoofing|null|package_manager|null
