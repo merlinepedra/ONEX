@@ -381,3 +381,11 @@ killcast|killcast|null|https://github.com/thewhiteh4t/killcast.git|git|python,gi
 MITMf|MITMf|sniffing_spoofing|https://github.com/byt3bl33d3r/MITMf.git|git|python2,git
 sherlock|sherlock|information_gathering|https://github.com/sherlock-project/sherlock.git|git|python,git
 ettercap|ettercap|sniffing_spoofing|null|package_manager|null
+Reconnoitre|Reconnoitre|information_gathering,vulnerability_scanner|https://github.com/codingo/Reconnoitre.git|git|python,git
+infect|infect|null|https://github.com/noob-hackers/infect.git|git|git
+SIGIT|SIGIT|information_gathering|https://github.com/termuxhackers-id/SIGIT.git|git|python,git
+mitmAP|mitmAP|sniffing_spoofing|https://github.com/xdavidhu/mitmAP.git|git|python,git
+katoolin|katooling|null|https://github.com/LionSec/katoolin.git|git|python2,git
+SARA|SARA|null|https://github.com/termuxhackers-id/SARA.git|git|python,git
+zphisher|zphisher|information_gathering|https://github.com/htr-tech/zphisher.git|git|php,nodejs,git
+check-ip|check-ip|null|https://github.com/1RaY-1/check-ip.git|git|python,git
