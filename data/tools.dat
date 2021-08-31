@@ -190,6 +190,7 @@ fsociety|fsociety|null|https://github.com/Manisso/fsociety.git|git|python,git
 fuckshitup|fuckshitup|null|https://github.com/Smaash/fuckshitup.git|git|php,git
 fuxploider|fuxploider|null|https://github.com/almandin/fuxploider.git|git|python,git
 gasmask|gasmask|null|https://github.com/twelvesec/gasmask.git|git|python,git
+grabcam|grabcam|information_gathering|https://github.com/noob-hackers/grabcam.git|git|git,php,curl
 gcat|gcat|null|https://github.com/byt3bl33d3r/gcat.git|git|python,git
 get|get|null|https://github.com/peterpt/get.git|git|git
 ghost-phisher|ghost-phisher|information_gathering|https://github.com/savio-code/ghost-phisher.git|git|python,git
@@ -202,6 +203,7 @@ goofile|goofile|information_gathering|https://gitlab.com/kalilinux/packages/goof
 gcc|gcc|programming_language|null|package_manager|null
 hURL|hURL|web_hacking|https://github.com/fnord0/hURL.git|git|perl,git
 hacktronian|hacktronian|null|https://github.com/thehackingsage/hacktronian.git|git|git
+hacklock|hacklock|information_gathering|https://github.com/noob-hackers/hacklock.git|git|git
 hakkuframework|hakkuframework|null|https://github.com/4shadoww/hakkuframework.git|git|python,git
 hammer|hammer|ddos|https://github.com/cyweb/hammer.git|git|python,git
 hash-generator|hash-generator|password_attack|https://github.com/CiKu370/hash-generator.git|git|python,git
@@ -228,6 +230,7 @@ kwetza|kwetza|null|https://github.com/sensepost/kwetza.git|git|python,git
 leviathan|leviathan|null|https://github.com/tearsecurity/leviathan.git|git|python,git
 lscript|lscript|null|https://github.com/arismelachroinos/lscript.git|git|git
 lynis|lynis|vulnerability_scanner|https://github.com/CISOfy/lynis.git|git|git
+maskphish|maskphish|information_gathering,web_hacking|https://github.com/jaykali/maskphish.git|git|git,curl
 maskprocessor|maskprocessor|password_attack|https://github.com/hashcat/maskprocessor.git|git|clang,gcc,git
 masscan|masscan|information_gathering|https://github.com/robertdavidgraham/masscan.git|git|clang,gcc,git
 metasploit-framework|msfinstall|exploitation_tools|https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb|curl|curl
@@ -266,6 +269,7 @@ pupy|pupy|null|https://github.com/n1nj4sec/pupy|git|python,git
 pwnat|pwnat|maintaining_access|https://github.com/samyk/pwnat.git|git|clang,gcc,git
 pybluez|pybluez|null|https://github.com/karulis/pybluez.git|git|python,git
 pydictor|pydictor|null|https://github.com/LandGrey/pydictor.git|git|python,git
+pyphisher|pyphisher|information_gathering,web_hacking|https://github.com/KasRoudra/pyphisher.git|git|python,wget,curl,php,unzip
 python|python|programming_language|null|package_manager|null
 qark|qark|null|https://github.com/linkedin/qark.git|git|python,git
 rang3r|rang3r|vulnerability_scanner|https://github.com/floriankunushevci/rang3r.git|git|python,git
@@ -369,3 +373,4 @@ zphisher|zphisher|information_gathering|https://github.com/htr-tech/zphisher.git
 check-ip|check-ip|null|https://github.com/1RaY-1/check-ip.git|git|python,git
 Mr-DDos|Mr-DDos|ddos|https://github.com/OnlineHacKing/Mr-DDos.git|git|python2,perl,git
 MHDDoS|MHDDoS|ddos|https://github.com/MHProDev/MHDDoS.git|git|python,git
+nexphisher|nexphisher|information_gathering|https://github.com/htr-tech/nexphisher.git|git|git,php,curl
