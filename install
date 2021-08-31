@@ -1,13 +1,21 @@
 #!/bin/sh
 # Name : Onex
 # Date : 24 November 2019
-# Description : onex is a hacking tools installer and package manager for hacker's.
+# Description : Onex is a hacking tools installer and package manager for hacker's.
 
-logo="\033[01;33m
-  ___  _ __   ___\033[01;31m__  __
-\033[01;33m / _ \\| '_ \\ / _ \033[01;31m\\ \\/ /
-\033[01;33m| (_) | | | |  __/\033[01;31m>  < 
-\033[01;33m \___/|_| |_|\\___\033[01;31m/_/\_\\
+nc="\033[00m"
+red="\033[01;31m"
+green="\033[01;32m"
+yellow="\033[01;33m"
+blue="\033[01;34m"
+purple="\033[01;35m"
+cyan="\033[01;36m"
+
+logo="${yellow}
+  ___  _ __   ___${red}__  __
+${yellow} / _ \\| '_ \\ / _ ${red}\\ \\/ /
+${yellow}| (_) | | | |  __/${red}>  < 
+${yellow} \___/|_| |_|\\___${red}/_/\_\\
 "
 
 # checking for system home dir
@@ -129,9 +137,9 @@ fi
 # setup process
 clear
 echo "$logo"
-echo "\033[01;32m Installing .... \033[00m"
+echo "${green} Installing .... ${nc}"
 sleep 1
-echo "\033[01;33m Running setup .... \033[00m"
+echo "${yellow} Running setup .... ${nc}"
 sleep 1
 
 # installing dependency
@@ -201,12 +209,12 @@ if [ -e $bin/onex ]; then
   if [ -d $conf_dir/onex ]; then
     clear
     echo "$logo"
-    echo " \033[00mOnex \033[01;32minstalled successfully !!"
-    echo " \033[01;32mtype \033[00m'onex -h'\033[01;32m for more.\033[00m"
+    echo " ${purple}Onex ${green}installed successfully !!"
+    echo " ${green}type ${nc}'onex -h'${green} for more.${nc}"
   else
     clear
     echo "$logo"
-    echo " \033[01;31mSorry \033[00m: onex \033[01;31mis not installed !!"
-    echo " \033[01;32mPlease try again\033[00m"
+    echo " ${red}Sorry ${cyan}: onex ${red}is not installed !!"
+    echo " ${green}Please try again${nc}"
   fi
 fi
