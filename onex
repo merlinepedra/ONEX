@@ -150,8 +150,10 @@ install() {
   # check tool name is null or not
   if [ "$tool_name" ]; then
 
+    case $tool_installer in
+
     # for default package
-    if [ $tool_installer = "package_manager" ]; then
+    package_manager)
       # check tool is already installed or not
       if [ ! -e $bin/$tool_pac ]; then
         # check sudo is null or not
@@ -209,9 +211,10 @@ install() {
       else
         echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
+    ;;
 
     # for github tools
-    elif [ $tool_installer = "git" ]; then
+    git)
       # check tool is already installed or not
       if [ ! -e ~/$tool_pac ]; then
         # check sudo is null or not
@@ -269,9 +272,10 @@ install() {
       else
         echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
+    ;;
 
     # for curl tools
-    elif [ $tool_installer = "curl" ]; then
+    curl)
       # check tool is already installed or not
       if [ ! -e ~/$tool_pac ]; then
         # check sudo is null or not
@@ -329,9 +333,10 @@ install() {
       else
         echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
+    ;;
 
     # for wget tools
-    elif [ $tool_installer = "wget" ]; then
+    wget)
       # check tool is already installed or not
       if [ ! -e ~/$tool_pac ]; then
         # check sudo is null or not
@@ -389,9 +394,11 @@ install() {
       else
         echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
+    ;;
+    
     # for any new installer
     # put here
-    fi
+    esac
   fi
   # wait for user any input
   echo -n "$prompt "
