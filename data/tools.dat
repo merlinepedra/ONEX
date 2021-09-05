@@ -401,4 +401,5 @@ netsniff-ng|netsniff-ng|sniffing_spoofing|https://github.com/netsniff-ng/netsnif
 voiphopper|voiphopper|vulnerability_scanner|https://github.com/iknowjason/voiphopper.git|git|gcc,make,git
 pdfid|pdfid|forensics_tools|https://gitlab.com/kalilinux/packages/pdfid.git|git|python3,git
 cymothoa|cymothoa|maintaining_access|null|package_manager|null
+CamHacker|CamHacker|information_gathering,sniffing_spoofing|https://github.com/KasRoudra/CamHacker.git|git|git,php,curl,wget,php
 kali-anonsurf|kali-anonsurf|null|https://github.com/Und3rf10w/kali-anonsurf.git|git|git
