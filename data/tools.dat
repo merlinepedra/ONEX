@@ -370,7 +370,7 @@ mitmAP|mitmAP|sniffing_spoofing|https://github.com/xdavidhu/mitmAP.git|git|pytho
 katoolin|katooling|null|https://github.com/LionSec/katoolin.git|git|python2,git
 SARA|SARA|null|https://github.com/termuxhackers-id/SARA.git|git|python,git
 zphisher|zphisher|information_gathering|https://github.com/htr-tech/zphisher.git|git|php,nodejs,git
-check-ip|check-ip|null|https://github.com/1RaY-1/check-ip.git|git|python,git
+check-ip|check-ip|information_gathering|https://github.com/1RaY-1/check-ip.git|git|gcc,git
 Mr-DDos|Mr-DDos|ddos|https://github.com/OnlineHacKing/Mr-DDos.git|git|python2,perl,git
 MHDDoS|MHDDoS|ddos|https://github.com/MHProDev/MHDDoS.git|git|python,git
 nexphisher|nexphisher|information_gathering|https://github.com/htr-tech/nexphisher.git|git|git,php,curl
