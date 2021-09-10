@@ -403,3 +403,11 @@ pdfid|pdfid|forensics_tools|https://gitlab.com/kalilinux/packages/pdfid.git|git|
 cymothoa|cymothoa|maintaining_access|null|package_manager|null
 CamHacker|CamHacker|information_gathering,sniffing_spoofing|https://github.com/KasRoudra/CamHacker.git|git|git,php,curl,wget,php
 kali-anonsurf|kali-anonsurf|null|https://github.com/Und3rf10w/kali-anonsurf.git|git|git
+ike-scan|ike-scan|information_gathering|null|package_manager|null
+spiderfoot|spiderfoot|information_gathering|https://github.com/smicallef/spiderfoot.git|git|python3,python3-pip,git
+python3-shodan|python3-shodan|information_gathering|null|package_manager|null
+ghost_eye|ghost_eye|information_gathering|https://github.com/BullsEye0/ghost_eye.git|git|python3,python3-pip,git
+wig|wig|web_hacking|null|package_manager|null
+fcrackzip|fcrackzip|password_attack|null|package_manager|null
+ophcrack|ophcrack|password_attack|null|package_manager|null
+webshells|webshells|web_hacking|https://github.com/BlackArch/webshells.git|git|php,perl,gcc,git
