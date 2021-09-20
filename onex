@@ -161,7 +161,7 @@ install() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -177,13 +177,13 @@ install() {
               $sudo $pac install $tool_pac -y
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -199,17 +199,17 @@ install() {
               $pac install $tool_pac -y
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!"
           fi
         fi
         # check tool is installed or not
         if [ ! -e $bin/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
     ;;
 
@@ -222,7 +222,7 @@ install() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -238,13 +238,13 @@ install() {
               $sudo git clone $tool_url ~/$tool_name
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -260,17 +260,17 @@ install() {
               git clone $tool_url ~/$tool_name
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
           fi
         fi
         # check tool is installed or not
         if [ ! -e ~/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${purple}'$tool_name' ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
     ;;
 
@@ -283,7 +283,7 @@ install() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -299,13 +299,13 @@ install() {
               $sudo curl -o ~/$tool_pac $tool_url
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -321,17 +321,17 @@ install() {
               curl -o ~/$tool_pac $tool_url
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
           fi
         fi
         # check tool is installed or not
         if [ ! -e ~/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
     ;;
 
@@ -344,7 +344,7 @@ install() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -360,13 +360,13 @@ install() {
               $sudo wget $tool_url -o ~/$tool_pac
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -382,17 +382,17 @@ install() {
               wget $tool_url -o ~/$tool_pac
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
           fi
         fi
         # check tool is installed or not
         if [ ! -e ~/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
     ;;
     
@@ -429,7 +429,7 @@ install_category_tool() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -445,13 +445,13 @@ install_category_tool() {
               $sudo $pac install $tool_pac -y
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -467,17 +467,17 @@ install_category_tool() {
               $pac install $tool_pac -y
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
           fi
         fi
         # check tool is installed or not
         if [ ! -e $bin/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
 
     # for github tools
@@ -489,7 +489,7 @@ install_category_tool() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -505,13 +505,13 @@ install_category_tool() {
               $sudo git clone $tool_url ~/$tool_pac
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -527,17 +527,17 @@ install_category_tool() {
               git clone $tool_url ~/$tool_pac
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
           fi
         fi
         # check tool is installed or not
         if [ ! -e ~/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
 
     # for curl tools
@@ -549,7 +549,7 @@ install_category_tool() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -565,13 +565,13 @@ install_category_tool() {
               $sudo curl -o ~/$tool_pac $tool_url
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -587,17 +587,17 @@ install_category_tool() {
               curl -o ~/$tool_pac $tool_url
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
           fi
         fi
         # check tool is installed or not
         if [ ! -e ~/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
 
     # for wget tools
@@ -609,7 +609,7 @@ install_category_tool() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -625,13 +625,13 @@ install_category_tool() {
               $sudo wget $tool_url -o ~/$tool_pac
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -647,17 +647,17 @@ install_category_tool() {
               wget $tool_url -o ~/$tool_pac
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
           fi
         fi
         # check tool is installed or not
         if [ ! -e ~/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
     # for any new installer
     # put here
@@ -802,7 +802,7 @@ update() {
         # check user is online or not
         wget -q --spider http://google.com
         if [ $? -eq 0 ]; then
-          echo "${green} Updating ...${nc}"
+          echo "${green}Updating ...${nc}"
           sleep 1
           if [ -e $bin/git ]; then
             if [ $sudo ]; then
@@ -830,7 +830,7 @@ update() {
           echo "${green} onex updated !!${nc}"
           sleep 1
         else
-          echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!"
+          echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!"
           sleep 1
         fi
       ;;
@@ -888,7 +888,7 @@ menu() {
         about
       ;;
       5|exit|Exit)
-        echo "${green} Exiting ....${nc}"
+        echo "${green}Exiting ....${nc}"
         break
       ;;
       *)
@@ -961,7 +961,7 @@ cli_update() {
   # check user is online or not
   wget -q --spider http://google.com
   if [ $? -eq 0 ]; then
-    echo "${green} Updating ...${nc}"
+    echo "${green}Updating ...${nc}"
     sleep 1
     if [ -e $bin/git ]; then
       if [ $sudo ]; then
@@ -984,7 +984,7 @@ cli_update() {
     fi
     echo "${nc}'onex' ${green} updated successfully !!${nc}"
   else
-    echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+    echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
   fi
 }
 
@@ -1013,7 +1013,7 @@ install_process() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -1029,13 +1029,13 @@ install_process() {
               $sudo $pac install $tool_pac -y
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -1051,17 +1051,17 @@ install_process() {
               $pac install $tool_pac -y
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
           fi
         fi
         # check tool is installed or not
         if [ ! -e $bin/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
       fi
 
     # for github tools
@@ -1073,7 +1073,7 @@ install_process() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -1089,13 +1089,13 @@ install_process() {
               $sudo git clone $tool_url ~/$tool_name
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -1111,17 +1111,17 @@ install_process() {
               git clone $tool_url ~/$tool_name
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!"
           fi
         fi
         # check tool is installed or not
         if [ ! -e ~/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
       fi
 
     # for curl tools
@@ -1133,7 +1133,7 @@ install_process() {
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -1149,13 +1149,13 @@ install_process() {
               $sudo curl -o ~/$tool_pac $tool_url
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -1171,17 +1171,17 @@ install_process() {
               curl -o ~/$tool_pac $tool_url
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!"
           fi
         fi
         # check tool is installed or not
         if [ ! -e ~/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
       fi
 
     # for wget tools
@@ -1194,7 +1194,7 @@ install_process() {
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
             # install tool dependency
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
@@ -1209,13 +1209,13 @@ install_process() {
               $sudo wget $tool_url -o ~/$tool_pac
             fi
           else
-            echo "${red} Sorry you are offline !!${nc}"
+            echo "${red}Sorry you are offline !!${nc}"
           fi
         else
           #check user is online or not
           wget -q --spider http://google.com
           if [ $? -eq 0 ]; then
-            echo "${green} Installing ...${nc}"
+            echo "${green}Installing ...${nc}"
             sleep 1
             # install tool dependency
             if [ $tool_dependency != "null" ]; then
@@ -1231,17 +1231,17 @@ install_process() {
               wget $tool_url -o ~/$tool_pac
             fi
           else
-            echo "${red} Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
+            echo "${red}Sorry ${nc}: you are ${red} offline ${nc}!!${nc}"
           fi
         fi
         # check tool is installed or not
         if [ ! -e ~/$tool_pac ]; then
-          echo "${red} Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
+          echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
         fi
       else
-        echo "${red} Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
+        echo "${red}Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
       fi
     # for any new installer
     # put here
@@ -1265,7 +1265,7 @@ cli_install() {
   if [ $get_tool_data ]; then
     install_process $get_tool_data
   else
-    echo "${red} Sorry ${nc}: '$1' ${red} tool not found !!${nc}"
+    echo "${red}Sorry ${nc}: '$1' ${red} tool not found !!${nc}"
     similar=`grep -i "^$1" $tools_data | cut -d"|" -f1`
     if [ "$similar" ]; then
       echo "${blue}Did you mean${nc}:"
@@ -1281,11 +1281,11 @@ cli_search() {
   # get tools data
   similar=`grep -i "^$1" $tools_data | cut -d"|" -f1`
   if [ "$similar" ]; then
-    echo -n "${green} "
+    echo -n "${green}"
     grep -i "^$1" $tools_data | cut -d"|" -f1
     echo -n "${nc}"
   else
-    echo "${red} Sorry ${nc}: '$1' ${red} tool not found !!${nc}"
+    echo "${red}Sorry ${nc}: '$1' ${red} tool not found !!${nc}"
   fi
 }
 
@@ -1342,7 +1342,7 @@ if [ $# -eq 1 ]; then
       echo "  start  \tstart onex menu mode."
     ;;
     *)
-      echo "${red} Sorry ${nc}: '$1' ${red} invalid option!!${nc}"
+      echo "${red}Sorry ${nc}: '$1' ${red} invalid option!!${nc}"
       echo "${blue}type ${nc}:\n  'onex -h' or 'onex help' for help.${nc}"
     ;;
   esac
@@ -1354,7 +1354,7 @@ elif [ $# -eq 2 ]; then
           cli_list_all
          ;;
         *)
-          echo "${red} Sorry ${nc}: '$2' ${red} invalid option!!${nc}"
+          echo "${red}Sorry ${nc}: '$2' ${red} invalid option!!${nc}"
           echo "${blue}type ${nc}:\n  'onex -h' or 'onex help' for help.${nc}"
         ;;
       esac
@@ -1366,7 +1366,7 @@ elif [ $# -eq 2 ]; then
       cli_search $2
     ;;
     *)
-      echo "${red} Sorry ${nc}: '$1' ${red} invalid option!!${nc}"
+      echo "${red}Sorry ${nc}: '$1' ${red} invalid option!!${nc}"
       echo "${blue}type ${nc}:\n  'onex -h' or 'onex help' for help.${nc}"
     ;;
   esac
