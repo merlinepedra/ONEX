@@ -410,3 +410,5 @@ wig|wig|web_hacking|null|package_manager|null
 fcrackzip|fcrackzip|password_attack|null|package_manager|null
 ophcrack|ophcrack|password_attack|null|package_manager|null
 webshells|webshells|web_hacking|https://github.com/BlackArch/webshells.git|git|php,perl,gcc,git
+evilginx2|evilginx2|null|https://github.com/kgretzky/evilginx2.git|git|make,git
+android_hid|android_hid|null|https://github.com/androidmalware/android_hid.git|git|git
