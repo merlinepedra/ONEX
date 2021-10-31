@@ -1,6 +1,6 @@
 #!/bin/sh
 # Name : Onex
-# Date : 24 November 2019
+# Date : 1 November 2021
 # Description : Onex is a hacking tools installer and package manager for hacker's.
 
 nc="\033[00m"
@@ -61,77 +61,32 @@ else
 fi
 
 # checking for system root access
-if [ -e /usr/lib/sudo ]; then
-  sudo="sudo"
-elif [ -e /usr/bin/sudo ]; then
-  sudo="sudo"
-elif [ -e /usr/sbin/sudo ]; then
-  sudo="sudo"
-elif [ -e /lib/sudo ]; then
-  sudo="sudo"
-elif [ -e /bin/sudo ]; then
-  sudo="sudo"
-elif [ -e /sbin/sudo ]; then
-  sudo="sudo"
-elif [ -e /data/data/com.termux/files/usr/bin/sudo ]; then
+if [ `command -v sudo` ]; then
   sudo="sudo"
 else
   sudo=""
 fi
 
 # checking for system package manager
-if [ -e /bin/apt ]; then
+if [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
+  pac="pkg"
+  system="termux"
+elif [ `command -v apt` ]; then
+  pac="apt"
+  system="linux"
+elif [ `command -v apt-get` ]; then
   pac="apt-get"
   system="linux"
-elif [ -e /bin/apt-get ]; then
-  pac="apt-get"
-  system="linux"
-elif [ -e /usr/bin/apt-get ]; then
-  pac="apt-get"
-  system="linux"
-elif [ -e /sbin/apt-get ]; then
-  pac="apt-get"
-  system="linux"
-elif [ -e /usr/sbin/apt-get ]; then
-  pac="apt-get"
-  system="linux"
-elif [ -e /bin/apk ]; then
+elif [ `command -v apk` ]; then
   pac="apk"
   system="linux"
-elif [ -e /usr/bin/apk ]; then
-  pac="apk"
-  system="linux"
-elif [ -e /sbin/apk ]; then
-  pac="apk"
-  system="linux"
-elif [ -e /usr/sbin/apk ]; then
-  pac="apk"
-  system="linux"
-elif [ -e /bin/yum ]; then
+elif [ `command -v yum` ]; then
   pac="yum"
   system="fedora"
-elif [ -e /usr/bin/yum ]; then
-  pac="yum"
-  system="fedora"
-elif [ -e /sbin/yum ]; then
-  pac="yum"
-  system="fedora"
-elif [ -e /usr/sbin/yum ]; then
-  pac="yum"
-  system="fedora"
-elif [ -e /usr/local/bin/brew ]; then
+elif [ `command -v brew` ]; then
   pac="brew"
   system="mac"
   sudo=""
-elif [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
-  pac="pkg"
-  system="termux"
-elif [ -e /data/data/com.termux/files/usr/bin/apt ]; then
-  pac="apt"
-  system="termux"
-elif [ -e /data/data/com.termux/files/usr/bin/apt-get ]; then
-  pac="apt-get"
-  system="termux"
 fi
 
 # setup process
@@ -144,7 +99,7 @@ sleep 1
 
 # installing dependency
 for each_pac in "wget" "curl" "git"; do
-  if [ ! -e $bin/$each_pac ]; then
+  if [ ! `command -v $each_pac` ]; then
     if [ $sudo ]; then
       $sudo $pac install $each_pac -y
     else
