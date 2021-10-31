@@ -1,6 +1,6 @@
 #!/bin/sh
 # Name : Onex
-# Date : 24 November 2019
+# Date : 1 November 2021
 # Description : Onex is a hacking tools installer and package manager for hacker's.
 
 nc="\033[00m"
@@ -62,77 +62,32 @@ else
 fi
 
 # checking for system root access
-if [ -e /usr/lib/sudo ]; then
-  sudo="sudo"
-elif [ -e /usr/bin/sudo ]; then
-  sudo="sudo"
-elif [ -e /usr/sbin/sudo ]; then
-  sudo="sudo"
-elif [ -e /lib/sudo ]; then
-  sudo="sudo"
-elif [ -e /bin/sudo ]; then
-  sudo="sudo"
-elif [ -e /sbin/sudo ]; then
-  sudo="sudo"
-elif [ -e /data/data/com.termux/files/usr/bin/sudo ]; then
+if [ `command -v sudo` ]; then
   sudo="sudo"
 else
   sudo=""
 fi
 
 # checking for system package manager
-if [ -e /bin/apt ]; then
+if [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
+  pac="pkg"
+  system="termux"
+elif [ `command -v apt` ]; then
+  pac="apt"
+  system="linux"
+elif [ `command -v apt-get` ]; then
   pac="apt-get"
   system="linux"
-elif [ -e /bin/apt-get ]; then
-  pac="apt-get"
-  system="linux"
-elif [ -e /usr/bin/apt-get ]; then
-  pac="apt-get"
-  system="linux"
-elif [ -e /sbin/apt-get ]; then
-  pac="apt-get"
-  system="linux"
-elif [ -e /usr/sbin/apt-get ]; then
-  pac="apt-get"
-  system="linux"
-elif [ -e /bin/apk ]; then
+elif [ `command -v apk` ]; then
   pac="apk"
   system="linux"
-elif [ -e /usr/bin/apk ]; then
-  pac="apk"
-  system="linux"
-elif [ -e /sbin/apk ]; then
-  pac="apk"
-  system="linux"
-elif [ -e /usr/sbin/apk ]; then
-  pac="apk"
-  system="linux"
-elif [ -e /bin/yum ]; then
+elif [ `command -v yum` ]; then
   pac="yum"
   system="fedora"
-elif [ -e /usr/bin/yum ]; then
-  pac="yum"
-  system="fedora"
-elif [ -e /sbin/yum ]; then
-  pac="yum"
-  system="fedora"
-elif [ -e /usr/sbin/yum ]; then
-  pac="yum"
-  system="fedora"
-elif [ -e /usr/local/bin/brew ]; then
+elif [ `command -v brew` ]; then
   pac="brew"
   system="mac"
   sudo=""
-elif [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
-  pac="pkg"
-  system="termux"
-elif [ -e /data/data/com.termux/files/usr/bin/apt ]; then
-  pac="apt"
-  system="termux"
-elif [ -e /data/data/com.termux/files/usr/bin/apt-get ]; then
-  pac="apt-get"
-  system="termux"
 fi
 
 # install tools
@@ -147,6 +102,7 @@ install() {
   tool_url=`grep '.' $tools_data | sort -f | sed -n "$1p" | cut -d"|" -f4`
   # package name or tool name
   tool_pac=`grep '.' $tools_data | sort -f | sed -n "$1p" | cut -d"|" -f2`
+
   # check tool name is null or not
   if [ "$tool_name" ]; then
 
@@ -155,7 +111,7 @@ install() {
     # for default package
     package_manager)
       # check tool is already installed or not
-      if [ ! -e $bin/$tool_pac ]; then
+      if [ ! `command -v $tool_pac` ]; then
         # check sudo is null or not
         if [ $sudo ]; then
           #check user is online or not
@@ -167,7 +123,7 @@ install() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -189,7 +145,7 @@ install() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -203,7 +159,7 @@ install() {
           fi
         fi
         # check tool is installed or not
-        if [ ! -e $bin/$tool_pac ]; then
+        if [ ! `command -v $tool_pac` ]; then
           echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
@@ -212,7 +168,6 @@ install() {
         echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
     ;;
-
     # for github tools
     git)
       # check tool is already installed or not
@@ -228,7 +183,7 @@ install() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -250,7 +205,7 @@ install() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -273,7 +228,6 @@ install() {
         echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
     ;;
-
     # for curl tools
     curl)
       # check tool is already installed or not
@@ -289,7 +243,7 @@ install() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -311,7 +265,7 @@ install() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -334,7 +288,6 @@ install() {
         echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
     ;;
-
     # for wget tools
     wget)
       # check tool is already installed or not
@@ -350,7 +303,7 @@ install() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -372,7 +325,7 @@ install() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -417,13 +370,16 @@ install_category_tool() {
   tool_url=`grep '.' $tools_data | sort -f | sed -n "/$1/p" | sed -n "$2 p" | cut -d"|" -f4`
   # package name or tool name
   tool_pac=`grep '.' $tools_data | sort -f | sed -n "/$1/p" | sed -n "$2 p" | cut -d"|" -f2`
+  
   # check tool name is null or not
   if [ "$tool_name" ]; then
 
+    case $tool_installer in
+
     # for default package
-    if [ $tool_installer = "package_manager" ]; then
+    package_manager)
       # check tool is already installed or not
-      if [ ! -e $bin/$tool_pac ]; then
+      if [ ! `command -v $tool_pac` ]; then
         # check sudo is null or not
         if [ $sudo ]; then
           #check user is online or not
@@ -435,7 +391,7 @@ install_category_tool() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -457,7 +413,7 @@ install_category_tool() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -471,7 +427,7 @@ install_category_tool() {
           fi
         fi
         # check tool is installed or not
-        if [ ! -e $bin/$tool_pac ]; then
+        if [ ! `command -v $tool_pac` ]; then
           echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
@@ -479,9 +435,9 @@ install_category_tool() {
       else
         echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
-
+    ;;
     # for github tools
-    elif [ $tool_installer = "git" ]; then
+    git)
       # check tool is already installed or not
       if [ ! -e ~/$tool_pac ]; then
         # check sudo is null or not
@@ -495,7 +451,7 @@ install_category_tool() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -517,7 +473,7 @@ install_category_tool() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -539,9 +495,9 @@ install_category_tool() {
       else
         echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
-
+    ;;
     # for curl tools
-    elif [ $tool_installer = "curl" ]; then
+    curl)
       # check tool is already installed or not
       if [ ! -e ~/$tool_pac ]; then
         # check sudo is null or not
@@ -555,7 +511,7 @@ install_category_tool() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -577,7 +533,7 @@ install_category_tool() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -599,9 +555,9 @@ install_category_tool() {
       else
         echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
-
+    ;;
     # for wget tools
-    elif [ $tool_installer = "wget" ]; then
+    wget)
       # check tool is already installed or not
       if [ ! -e ~/$tool_pac ]; then
         # check sudo is null or not
@@ -615,7 +571,7 @@ install_category_tool() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -637,7 +593,7 @@ install_category_tool() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -659,9 +615,11 @@ install_category_tool() {
       else
         echo "${red}Sorry ${nc}: '$tool_name' ${green} is already installed !!${nc}"
       fi
+    ;;
+
     # for any new installer
     # put here
-    fi
+    esac
   fi
   # wait for user any input
   echo -n "$prompt "
@@ -804,7 +762,7 @@ update() {
         if [ $? -eq 0 ]; then
           echo "${green}Updating ...${nc}"
           sleep 1
-          if [ -e $bin/git ]; then
+          if [ `command -v git` ]; then
             if [ $sudo ]; then
               $sudo git clone https://github.com/rajkumardusad/onex.git ~/onex
               $sudo chmod +x ~/onex/install
@@ -963,7 +921,7 @@ cli_update() {
   if [ $? -eq 0 ]; then
     echo "${green}Updating ...${nc}"
     sleep 1
-    if [ -e $bin/git ]; then
+    if [ `command -v git` ]; then
       if [ $sudo ]; then
         $sudo git clone https://github.com/rajkumardusad/onex.git ~/onex
         update_process
@@ -1004,10 +962,12 @@ install_process() {
   # check tool name is null or not
   if [ "$tool_name" ]; then
 
+    case $tool_installer in 
+
     # for default package
-    if [ $tool_installer = "package_manager" ]; then
+    package_manager)
       # check tool is already installed or not
-      if [ ! -e $bin/$tool_pac ]; then
+      if [ ! `command -v $tool_pac` ]; then
         # check sudo is null or not
         if [ $sudo ]; then
           #check user is online or not
@@ -1019,7 +979,7 @@ install_process() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -1041,7 +1001,7 @@ install_process() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -1055,7 +1015,7 @@ install_process() {
           fi
         fi
         # check tool is installed or not
-        if [ ! -e $bin/$tool_pac ]; then
+        if [ ! `command -v $tool_pac` ]; then
           echo "${red}Sorry ${nc}: '$tool_name' ${red} is not installed !!${nc}"
         else
           echo "${nc}'$tool_name' ${nc}: ${green} is installed successfully !!${nc}"
@@ -1063,9 +1023,9 @@ install_process() {
       else
         echo "${red}Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
       fi
-
+    ;;
     # for github tools
-    elif [ $tool_installer = "git" ]; then
+    git)
       # check tool is already installed or not
       if [ ! -e ~/$tool_pac ]; then
         # check sudo is null or not
@@ -1079,7 +1039,7 @@ install_process() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -1101,7 +1061,7 @@ install_process() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -1123,9 +1083,9 @@ install_process() {
       else
         echo "${red}Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
       fi
-
+    ;;
     # for curl tools
-    elif [ $tool_installer = "curl" ]; then
+    curl)
       # check tool is already installed or not
       if [ ! -e ~/$tool_pac ]; then
         # check sudo is null or not
@@ -1139,7 +1099,7 @@ install_process() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -1161,7 +1121,7 @@ install_process() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -1183,9 +1143,9 @@ install_process() {
       else
         echo "${red}Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
       fi
-
+    ;;
     # for wget tools
-    elif [ $tool_installer = "wget" ]; then
+    wget)
       # check tool is already installed or not
       if [ ! -e ~/$tool_pac ]; then
         # check sudo is null or not
@@ -1199,7 +1159,7 @@ install_process() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $sudo $pac install $dep_name -y
                 fi
               done
@@ -1221,7 +1181,7 @@ install_process() {
             if [ $tool_dependency != "null" ]; then
               for dep_name in `echo $tool_dependency | tr ',' ' '`; do
                 # installing dependency
-                if [ ! -e $bin/$dep_name ]; then
+                if [ ! `command -v $dep_name` ]; then
                   $pac install $dep_name -y
                 fi
               done
@@ -1243,9 +1203,11 @@ install_process() {
       else
         echo "${red}Sorry ${nc}: ${nc}'$tool_name' ${green} is already installed !!${nc}"
       fi
+    ;;
+
     # for any new installer
     # put here
-    fi
+    esac
   fi
 }
 
