@@ -1,10 +1,10 @@
 # Onex
 
-## Legal Notice:
+## Legal Notice: please don't use this tool
 
 #### Issue: https://github.com/rajkumardusad/onex/issues/86#issue-1053271339
 
-*According to that person this it harmful and it can break your computer so i request everyone please do not install and use this tool.*
+*According to that person this tool is harmful and it can break your computer so i request everyone please do not install and use this tool.*
 
 
 
