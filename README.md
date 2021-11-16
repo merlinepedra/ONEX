@@ -1,5 +1,13 @@
 # Onex
 
+## Legal Notice:
+
+#### Issue: https://github.com/rajkumardusad/onex/issues/86#issue-1053271339
+
+*According to that person this it harmful and it can break your computer so i request everyone please do not install and use this tool.*
+
+
+
 ***"onex a hacking tools library."***
 Onex is a kali linux hacking tools installer for termux and other linux distribution. Onex is a package manager for hacker's.
 Onex manage more than 400+ hacking tools that can be installed on single click. Use `onex install [tool_name]` command to install any hacking tool.
